@@ -83,19 +83,24 @@ ifeq ($(CHAOS_CALMER),y)
 #  ar71xx
 
 define Target/snapshots/trunk/ar71xx/generic
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE     := OpenWrt-SDK-ar71xx-generic_gcc-4.8-linaro_musl-1.1.11.Linux-x86_64.tar.bz2
 	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ar71xx/generic
 endef
 
 define Target/snapshots/trunk/ar71xx/mikrotik
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-mikrotik_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE     := OpenWrt-SDK-ar71xx-mikrotik_gcc-4.8-linaro_musl-1.1.10.Linux-x86_64.tar.bz2
 	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ar71xx/mikrotik
+endef
+
+define Target/snapshots/trunk/ar71xx/nand
+	SDK_SOURCE     := OpenWrt-SDK-ar71xx-nand_gcc-4.8-linaro_musl-1.1.11.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ar71xx/nand
 endef
 
 #  ramips
 
 define Target/snapshots/trunk/ramips/generic
-	SDK_SOURCE     := OpenWrt-SDK-ramips-rt305x_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE     := OpenWrt-SDK-ramips-rt305x_gcc-4.8-linaro_musl-1.1.10.Linux-x86_64.tar.bz2
 	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ramips/generic
 	REPO_SYMLINKS  := rt2880 rt305x
 endef
@@ -103,17 +108,12 @@ endef
 #  x86
 
 define Target/snapshots/trunk/x86/generic
-	SDK_SOURCE     := OpenWrt-SDK-x86-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE     := OpenWrt-SDK-x86-generic_gcc-4.8-linaro_musl-1.1.10.Linux-x86_64.tar.bz2
 	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/x86/generic
 endef
 
-define Target/snapshots/trunk/x86/kvm_guest
-	SDK_SOURCE     := OpenWrt-SDK-x86-kvm_guest_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/x86/kvm_guest
-endef
-
 define Target/snapshots/trunk/x86/xen_domu
-	SDK_SOURCE     := OpenWrt-SDK-x86-xen_domu_gcc-4.8-linaro_musl-1.1.10.Linux-x86_64.tar.bz2
+	SDK_SOURCE     := OpenWrt-SDK-x86-xen_domu_gcc-4.8-linaro_musl-1.1.11.Linux-x86_64.tar.bz2
 	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/x86/xen_domu
 endef
 
