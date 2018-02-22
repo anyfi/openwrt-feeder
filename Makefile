@@ -8,75 +8,7 @@ REPO_URL := http://anyfi.net/openwrt/feeder-test
 # Just add your target defintions here and they will be built.
 #
 
-## Barrier Breaker
-
-#  ar71xx
-
-define Target/barrier_breaker/14.07/ar71xx/generic
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/generic
-endef
-
-define Target/barrier_breaker/14.07/ar71xx/mikrotik
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/mikrotik
-endef
-
-define Target/barrier_breaker/14.07/ar71xx/nand
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/ar71xx/nand
-endef
-
-#  ramips
-
-define Target/barrier_breaker/14.07/ramips/rt305x
-	SDK_SOURCE     := OpenWrt-SDK-ramips-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/ramips/rt305x
-endef
-
-define Target/barrier_breaker/14.07/ramips/rt288x
-	SDK_SOURCE     := OpenWrt-SDK-ramips-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/ramips/rt288x
-endef
-
-#  x86
-
-define Target/barrier_breaker/14.07/x86/generic
-	SDK_SOURCE     := OpenWrt-SDK-x86-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/x86/generic
-endef
-
-define Target/barrier_breaker/14.07/x86/alix2
-	SDK_SOURCE     := OpenWrt-SDK-x86-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/x86/alix2
-endef
-
-define Target/barrier_breaker/14.07/x86/kvm_guest
-	SDK_SOURCE     := OpenWrt-SDK-x86-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/x86/kvm_guest
-endef
-
-define Target/barrier_breaker/14.07/x86/net5501
-	SDK_SOURCE     := OpenWrt-SDK-x86-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/x86/net5501
-endef
-
-define Target/barrier_breaker/14.07/x86/net5501
-	SDK_SOURCE     := OpenWrt-SDK-x86-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/x86/net5501
-endef
-
-define Target/barrier_breaker/14.07/x86/thincan
-	SDK_SOURCE     := OpenWrt-SDK-x86-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/x86/thincan
-endef
-
-define Target/barrier_breaker/14.07/x86/xen_domu
-	SDK_SOURCE     := OpenWrt-SDK-x86-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/barrier_breaker/14.07/x86/xen_domu
-endef
-
-## Chaos Calmer
+## OpenWrt Chaos Calmer 15.05
 
 #  ar71xx
 
@@ -107,6 +39,21 @@ define Target/chaos_calmer/15.05/ramips/rt288x
 	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05/ramips/rt288x
 endef
 
+define Target/chaos_calmer/15.05/ramips/mt7620
+	SDK_SOURCE     := OpenWrt-SDK-15.05-ramips-mt7620_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05/ramips/mt7620
+endef
+
+define Target/chaos_calmer/15.05/ramips/mt7621
+	SDK_SOURCE     := OpenWrt-SDK-15.05-ramips-mt7621_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05/ramips/mt7621
+endef
+
+define Target/chaos_calmer/15.05/ramips/mt7628
+	SDK_SOURCE     := OpenWrt-SDK-15.05-ramips-mt7628_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05/ramips/mt7628
+endef
+
 #  x86
 
 define Target/chaos_calmer/15.05/x86/generic
@@ -129,48 +76,226 @@ define Target/chaos_calmer/15.05/x86/xen_domu
 	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05/x86/xen_domu
 endef
 
-## Trunk
 
-ifeq ($(TRUNK),y)
+## OpenWrt Chaos Calmer 15.05.1
 
 #  ar71xx
 
-define Target/snapshots/trunk/ar71xx/generic
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-generic_gcc-4.8-linaro_musl-1.1.11.Linux-x86_64.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ar71xx/generic
+define Target/chaos_calmer/15.05.1/ar71xx/generic
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ar71xx-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ar71xx/generic
 endef
 
-define Target/snapshots/trunk/ar71xx/mikrotik
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-mikrotik_gcc-4.8-linaro_musl-1.1.10.Linux-x86_64.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ar71xx/mikrotik
+define Target/chaos_calmer/15.05.1/ar71xx/mikrotik
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ar71xx-mikrotik_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ar71xx/mikrotik
 endef
 
-define Target/snapshots/trunk/ar71xx/nand
-	SDK_SOURCE     := OpenWrt-SDK-ar71xx-nand_gcc-4.8-linaro_musl-1.1.11.Linux-x86_64.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ar71xx/nand
+define Target/chaos_calmer/15.05.1/ar71xx/nand
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ar71xx-nand_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ar71xx/nand
 endef
 
 #  ramips
 
-define Target/snapshots/trunk/ramips/generic
-	SDK_SOURCE     := OpenWrt-SDK-ramips-rt305x_gcc-4.8-linaro_musl-1.1.10.Linux-x86_64.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/ramips/generic
-	REPO_SYMLINKS  := rt2880 rt305x
+define Target/chaos_calmer/15.05.1/ramips/rt305x
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ramips-rt305x_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ramips/rt305x
+endef
+
+define Target/chaos_calmer/15.05.1/ramips/rt288x
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ramips-rt288x_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ramips/rt288x
+endef
+
+define Target/chaos_calmer/15.05.1/ramips/mt7620
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ramips-mt7620_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ramips/mt7620
+endef
+
+define Target/chaos_calmer/15.05.1/ramips/mt7621
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ramips-mt7621_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ramips/mt7621
+endef
+
+define Target/chaos_calmer/15.05.1/ramips/mt7628
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ramips-mt7628_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ramips/mt7628
+endef
+
+define Target/chaos_calmer/15.05.1/ramips/mt7688
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-ramips-mt7688_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/ramips/mt7688
 endef
 
 #  x86
 
-define Target/snapshots/trunk/x86/generic
-	SDK_SOURCE     := OpenWrt-SDK-x86-generic_gcc-4.8-linaro_musl-1.1.10.Linux-x86_64.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/x86/generic
+define Target/chaos_calmer/15.05.1/x86/generic
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-x86-generic_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/x86/generic
 endef
 
-define Target/snapshots/trunk/x86/xen_domu
-	SDK_SOURCE     := OpenWrt-SDK-x86-xen_domu_gcc-4.8-linaro_musl-1.1.11.Linux-x86_64.tar.bz2
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/trunk/x86/xen_domu
+define Target/chaos_calmer/15.05.1/x86/geode
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-x86-geode_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/x86/geode
 endef
 
-endif
+define Target/chaos_calmer/15.05.1/x86/kvm_guest
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-x86-kvm_guest_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/x86/kvm_guest
+endef
+
+define Target/chaos_calmer/15.05.1/x86/xen_domu
+	SDK_SOURCE     := OpenWrt-SDK-15.05.1-x86-xen_domu_gcc-4.8-linaro_uClibc-0.9.33.2.Linux-x86_64.tar.bz2
+	SDK_SOURCE_URL := https://downloads.openwrt.org/chaos_calmer/15.05.1/x86/xen_domu
+endef
+
+
+## Lede 17.01.4
+
+#  ar71xx
+
+define Target/lede/17.01.4/ar71xx/generic
+	SDK_SOURCE     := lede-sdk-17.01.4-ar71xx-generic_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ar71xx/generic
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/ar71xx/mikrotik
+	SDK_SOURCE     := lede-sdk-17.01.4-ar71xx-mikrotik_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ar71xx/mikrotik
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/ar71xx/nand
+	SDK_SOURCE     := lede-sdk-17.01.4-ar71xx-nand_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ar71xx/nand
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+#  ramips
+
+define Target/lede/17.01.4/ramips/rt305x
+	SDK_SOURCE     := lede-sdk-17.01.4-ramips-rt305x_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ramips/rt305x
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/ramips/rt288x
+	SDK_SOURCE     := lede-sdk-17.01.4-ramips-rt288x_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ramips/rt288x
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/ramips/mt7620
+	SDK_SOURCE     := lede-sdk-17.01.4-ramips-mt7620_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7620
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/ramips/mt7621
+	SDK_SOURCE     := lede-sdk-17.01.4-ramips-mt7621_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7621
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/ramips/mt7628
+	SDK_SOURCE     := lede-sdk-17.01.4-ramips-mt7628_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7628
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/ramips/mt7688
+	SDK_SOURCE     := lede-sdk-17.01.4-ramips-mt7688_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7688
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+#  x86
+
+define Target/lede/17.01.4/x86/generic
+	SDK_SOURCE     := lede-sdk-17.01.4-x86-generic_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/x86/generic
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+define Target/lede/17.01.4/x86/geode
+	SDK_SOURCE     := lede-sdk-17.01.4-x86-geode_gcc-5.4.0_musl-1.1.16.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.lede-project.org/releases/17.01.4/targets/x86/geode
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+	FIXUP          := scripts/feeds install libustream-openssl
+endef
+
+
+## Snapshots (unversioned)
+
+#  ar71xx
+
+define Target/snapshots/ar71xx/generic
+	SDK_SOURCE     := openwrt-sdk-ar71xx-generic_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ar71xx/generic
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+define Target/snapshots/ar71xx/mikrotik
+	SDK_SOURCE     := openwrt-sdk-ar71xx-mikrotik_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ar71xx/mikrotik
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+define Target/snapshots/ar71xx/nand
+	SDK_SOURCE     := openwrt-sdk-ar71xx-nand_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ar71xx/nand
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+#  ramips
+
+define Target/snapshots/ramips/rt305x
+	SDK_SOURCE     := openwrt-sdk-ramips-rt305x_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/rt305x
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+define Target/snapshots/ramips/rt288x
+	SDK_SOURCE     := openwrt-sdk-ramips-rt288x_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/rt288x
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+define Target/snapshots/ramips/mt7620
+	SDK_SOURCE     := openwrt-sdk-ramips-mt7620_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/mt7620
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+define Target/snapshots/ramips/mt7621
+	SDK_SOURCE     := openwrt-sdk-ramips-mt7621_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/mt7621
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+define Target/snapshots/ramips/mt7628
+	SDK_SOURCE     := openwrt-sdk-ramips-mt7628_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/mt7628
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
+
+define Target/snapshots/ramips/mt7688
+	SDK_SOURCE     := openwrt-sdk-ramips-mt7688_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/mt7688
+	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
+endef
 
 #########################
 
@@ -178,9 +303,11 @@ define Clear
 	SDK_SOURCE     :=
 	SDK_SOURCE_URL :=
 	REPO_SYMLINKS  :=
+	DEPS           :=
+	FIXUP          :=
 endef
 
-TARGETS := $(subst Target/,,$(filter Target/%,$(.VARIABLES)))
+TARGETS ?= $(subst Target/,,$(filter Target/%,$(.VARIABLES)))
 FEEDS   := $(shell grep -v '^\#' feeds.conf | awk '{ print $$2 }')
 
 all: $(TARGETS) repo/install.sh
@@ -198,17 +325,21 @@ $(TARGETS):
 	$(eval $(Clear))
 	$(eval $(Target/$@))
 	mkdir -p dl/$@
-	[ -f dl/$@/$(SDK_SOURCE) ] || wget $(SDK_SOURCE_URL)/$(SDK_SOURCE) -O dl/$@/$(SDK_SOURCE)
-	[ -d sdks/$@ ] || ( mkdir -p sdks/$@ && tar --strip-components=1 -jxf dl/$@/$(SDK_SOURCE) -C sdks/$@ )
-	cat deps.conf feeds.conf > sdks/$@/feeds.conf
+	[ -f dl/$@/$(SDK_SOURCE) ] || ( wget $(SDK_SOURCE_URL)/$(SDK_SOURCE) -O dl/$@/$(SDK_SOURCE).part && mv dl/$@/$(SDK_SOURCE).part dl/$@/$(SDK_SOURCE) )
+	[ -d sdks/$@ ] || ( rm -fr sdks/$@.part && mkdir -p sdks/$@.part && tar --strip-components=1 -axf dl/$@/$(SDK_SOURCE) -C sdks/$@.part && mv sdks/$@.part sdks/$@ )
+	cat feeds.conf >sdks/$@/feeds.conf
+	if [ ! -z "$(DEPS)" ]; then echo -e '$(DEPS)'; else cat deps.conf; fi >>sdks/$@/feeds.conf
 	(cd sdks/$@ && \
+		echo "# CONFIG_SIGNED_PACKAGES is not set" >.config && \
+		make defconfig && \
 		scripts/feeds uninstall -a && \
 		scripts/feeds update -a && \
 		$(foreach feed,$(FEEDS), scripts/feeds install -a -p $(feed) && ) \
+		$(if $(FIXUP),$(FIXUP) &&) \
 		make clean && \
 		make FEEDS_ENABLED="$(FEEDS)")
 	mkdir -p repo/$@/packages
-	$(foreach feed,$(FEEDS), cp -r sdks/$@/bin/*/packages/$(feed) repo/$@/packages/ && ) true
+	$(foreach feed,$(FEEDS),find sdks/$@/bin -wholename '*/$(feed)/*.ipk' -exec cp {} repo/$@/packages/ \; && ) true
 	$(foreach alias,$(REPO_SYMLINKS), ln -fs $(lastword $(subst /, ,$@)) repo/$@/../$(alias) && ) true
 
 repo/install.sh: Makefile templates/install.sh
