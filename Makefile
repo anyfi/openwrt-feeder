@@ -291,9 +291,9 @@ define Target/snapshots/ramips/mt7628
 	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
 endef
 
-define Target/snapshots/ramips/mt7688
-	SDK_SOURCE     := openwrt-sdk-ramips-mt7688_gcc-5.5.0_musl.Linux-x86_64.tar.xz
-	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/mt7688
+define Target/snapshots/ramips/mt76x8
+	SDK_SOURCE     := openwrt-sdk-ramips-mt76x8_gcc-5.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ramips/mt76x8
 	DEPS           := src-git base git://github.com/openwrt/openwrt.git\nsrc-git luci https://github.com/openwrt/luci.git
 endef
 
