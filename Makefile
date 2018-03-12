@@ -336,7 +336,8 @@ $(TARGETS):
 	$(eval $(Clear))
 	$(eval $(Target/$@))
 	mkdir -p dl/$@
-	[ -f dl/$@/$(SDK_SOURCE) ] || ( wget $(SDK_SOURCE_URL)/$(SDK_SOURCE) -O dl/$@/$(SDK_SOURCE).part && mv dl/$@/$(SDK_SOURCE).part dl/$@/$(SDK_SOURCE) )
+	cd "dl/$@" && wget -N "$(SDK_SOURCE_URL)/$(SDK_SOURCE)"
+	[ "sdks/$@" -nt "dl/$@/$(SDK_SOURCE)" ] || rm -fr "sdks/$@"
 	[ -d sdks/$@ ] || ( rm -fr sdks/$@.part && mkdir -p sdks/$@.part && tar --strip-components=1 -axf dl/$@/$(SDK_SOURCE) -C sdks/$@.part && mv sdks/$@.part sdks/$@ )
 	cat feeds.conf >sdks/$@/feeds.conf
 	if [ ! -z "$(DEPS)" ]; then echo -e '$(DEPS)'; else cat deps.conf; fi >>sdks/$@/feeds.conf
