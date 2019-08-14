@@ -260,6 +260,14 @@ define Target/snapshots/ar71xx/nand
 	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ar71xx/nand
 endef
 
+#  ath79
+
+define Target/snapshots/ath79/generic
+	SDK_SOURCE     := openwrt-sdk-ath79-generic_gcc-7.4.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/snapshots/targets/ath79/generic
+
+endef
+
 #  ramips
 
 define Target/snapshots/ramips/rt305x
