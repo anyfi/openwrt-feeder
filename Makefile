@@ -1,7 +1,6 @@
 
 ### CONFIGURATION ###
 
-REPO_URL ?= http://anyfi.net/openwrt
 REPO_DIR ?= repo
 
 ### TARGET DEFINTIONS ###
@@ -350,7 +349,7 @@ TARGETS += $(subst Target/,,$(filter Target/snapshots/%,$(.VARIABLES)))
 endif
 FEEDS   := $(shell grep -v '^\#' feeds.conf | awk '{ print $$2 }')
 
-all: $(TARGETS) $(REPO_DIR)/install.sh
+all: $(TARGETS)
 	@$(MAKE) index
 
 clean:
@@ -395,13 +394,6 @@ $(TARGETS):
 	( cd "sdks/$@/bin/packages" && \
 	  $(foreach feed,$(FEEDS),find . -wholename '*/$(feed)/*.ipk' -exec cp -a --parents '{}' "$(CURDIR)/$(REPO_DIR)/$(REPO_PKG_NAME)" \; && ) true	\
 	)
-
-$(REPO_DIR)/install.sh: Makefile templates/install.sh
-	mkdir -p $(REPO_DIR)
-	sed \
-		-e 's|%%REPO_URL%%|$(REPO_URL)|g' \
-		-e 's|%%REPO_FEEDS%%|$(FEEDS)|g' \
-		< templates/install.sh > $@
 
 # Generate index files using one of the SDKs.
 index:
