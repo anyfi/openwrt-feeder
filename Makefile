@@ -395,11 +395,33 @@ $(TARGETS):
 	  $(foreach feed,$(FEEDS),find . -wholename '*/$(feed)/*.ipk' -exec cp -a --parents '{}' "$(CURDIR)/$(REPO_DIR)/$(REPO_PKG_NAME)" \; && ) true	\
 	)
 
-# Generate index files using one of the SDKs.
+# Index and sign reposiories.
+# Generate a new key for signing, and put the public key in the repo:
+# $ usign -G -p openWrtUsign.pub -s openWrtUsign.key
+# $ cp openWrtUsign.pub repo
+# Update indexes:
+# $ make index KEYFILE=openWrtUsign.key
+# Use repo in OpenWrt:
+# # wget http://REPOURL/openWrtUsign.pub
+# # opkg-key add openWrtUsign.pub
+# # echo "src/gz REPONAME http://REPOURL" >/etc/opkg/REPONAME.conf
+# # opkg update
+# # opkg install PACKAGE
 index:
-	repodirs=$$(find $(CURDIR)/$(REPO_DIR) -name '*.ipk' -printf '%h\n' | sort -u) && \
-	for r in $${repodirs}; do \
-	  make -C sdks/$(lastword $(sort $(TARGETS))) package/index PACKAGE_SUBDIRS=$${r}; \
-	done
+	@repodirs=$$(find $(CURDIR)/$(REPO_DIR) -name '*.ipk' -printf '%h\n' | sort -u) && \
+	export PATH=$(CURDIR)/sdks/$(lastword $(sort $(TARGETS)))/staging_dir/host/bin:$${PATH} && \
+	export KEYFILE="$(realpath $(KEYFILE))" && \
+	for d in $${repodirs}; do ( \
+		cd $$d && \
+		$(CURDIR)/sdks/$(lastword $(sort $(TARGETS)))/scripts/ipkg-make-index.sh . 2>&1 > Packages.manifest && \
+		grep -vE '^(Maintainer|LicenseFiles|Source|SourceName|Require)' Packages.manifest > Packages && \
+		case "$$(((64 + $$(stat -L -c%s Packages)) % 128))" in 110|111) \
+			{ echo ""; echo ""; } >> Packages ;; \
+		esac && \
+		gzip -9nc Packages > Packages.gz && \
+	    if [ -n "$${KEYFILE}" ]; then \
+		  usign -S -m "Packages" -s "$${KEYFILE}" ; \
+		fi \
+	) ; done
 
 .PHONY: $(TARGETS) clean index
