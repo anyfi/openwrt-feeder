@@ -364,11 +364,12 @@ distclean:
 $(TARGETS):
 	$(eval $(Clear))
 	$(eval $(Target/$@))
-	mkdir -p dl/$@
+	mkdir -p dl/$@ dl/openwrt_dl
 	cd "dl/$@" && wget -N "$(SDK_SOURCE_URL)/$(SDK_SOURCE)"
 	cd "dl/$@" && wget -N "$(SDK_SOURCE_URL)/feeds.buildinfo" || true
 	[ "sdks/$@" -nt "dl/$@/$(SDK_SOURCE)" ] || rm -fr "sdks/$@"
 	[ -d sdks/$@ ] || ( rm -fr sdks/$@.part && mkdir -p sdks/$@.part && tar --strip-components=1 -axf dl/$@/$(SDK_SOURCE) -C sdks/$@.part && mv sdks/$@.part sdks/$@ )
+	[ -e "sdks/$@/dl" ] || ln -s "$(CURDIR)/dl/openwrt_dl" "sdks/$@/dl"
 	( if [ -e "dl/$@/feeds.buildinfo" ]; then \
 	    cat "dl/$@/feeds.buildinfo" ;         \
 	  else                                    \
