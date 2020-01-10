@@ -259,35 +259,35 @@ define Target/openwrt/18.06/ramips/rt3883
 	REPO_PKG_NAME  := packages-18.06
 endef
 
-## OpenWrt 19.07 - rc2
+## OpenWrt 19.07
 
 define Target/openwrt/19.07/ath79/generic
-	SDK_SOURCE     := openwrt-sdk-19.07.0-rc2-ath79-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ath79/generic
+	SDK_SOURCE     := openwrt-sdk-19.07.0-ath79-generic_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0/targets/ath79/generic
 	REPO_PKG_NAME  := packages-19.07
 endef
 
 define Target/openwrt/19.07/ipq40xx/generic
-	SDK_SOURCE     := openwrt-sdk-19.07.0-rc2-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
-	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ipq40xx/generic
+	SDK_SOURCE     := openwrt-sdk-19.07.0-ipq40xx-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0/targets/ipq40xx/generic
 	REPO_PKG_NAME  := packages-19.07
 endef
 
 define Target/openwrt/19.07/ipq806x/generic
-	SDK_SOURCE     := openwrt-sdk-19.07.0-rc2-ipq806x-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
-	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ipq806x/generic
+	SDK_SOURCE     := openwrt-sdk-19.07.0-ipq806x-generic_gcc-7.5.0_musl_eabi.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0/targets/ipq806x/generic
 	REPO_PKG_NAME  := packages-19.07
 endef
 
 define Target/openwrt/19.07/ramips/mt76x8
-	SDK_SOURCE     := openwrt-sdk-19.07.0-rc2-ramips-mt76x8_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ramips/mt76x8
+	SDK_SOURCE     := openwrt-sdk-19.07.0-ramips-mt76x8_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0/targets/ramips/mt76x8
 	REPO_PKG_NAME  := packages-19.07
 endef
 
 define Target/openwrt/19.07/ramips/rt3883
-	SDK_SOURCE     := openwrt-sdk-19.07.0-rc2-ramips-rt3883_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0-rc2/targets/ramips/rt3883
+	SDK_SOURCE     := openwrt-sdk-19.07.0-ramips-rt3883_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+	SDK_SOURCE_URL := https://downloads.openwrt.org/releases/19.07.0/targets/ramips/rt3883
 	REPO_PKG_NAME  := packages-19.07
 endef
 
